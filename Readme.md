@@ -8,12 +8,11 @@
  |____/|_|  |_|_|   |_____|
 ```
 
-SMPL is an open-source, human-centric, cross-platform interpreted scripting language engineered for rapid terminal automation, clean desktop utility logic, and session-state management.
+SMPL is a lightweight, cross-platform interpreted scripting language designed for fast terminal automation, desktop utility workflows, and persistent session state.
 
-By eliminating complex object-oriented syntax hierarchies, structural noise, and boilerplate code, SMPL bridges the gap between raw human intent and machine execution.
+It removes structural noise, excessive syntax, and boilerplate so your scripts stay readable, intuitive, and easy to build.
 
 ## ✨ Key Features
-
 - **Zero-Friction I/O** — `speak` and `listen` replace verbose string handling.
 - **Native State Persistence** — built-in `save`, `load`, and `forget` let your scripts persist session state without extra plumbing.
 - **Cross-Platform OS Bridge** — `open` and `run` support desktop automation across Windows, Linux, and macOS.
@@ -25,23 +24,6 @@ By eliminating complex object-oriented syntax hierarchies, structural noise, and
 
 ### Example: basic interaction
 
-```smpl
-speak "What is your name? "
-listen name
-speak "Hello "
-speak name
-```
-
-### SMPL vs Small Basic
-
-**Microsoft Small Basic**
-```text
-TextWindow.Write("What is your name? ")
-name = TextWindow.Read()
-TextWindow.WriteLine("Hello " + name)
-```
-
-**SMPL**
 ```smpl
 speak "What is your name? "
 listen name
