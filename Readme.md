@@ -1,4 +1,4 @@
-# ⚡ Simple Multi-Purpose Logic (SMPL)
+# Simple Multi-Purpose Logic (SMPL)
 
 ```text
   ____  __  __ ____  _     
