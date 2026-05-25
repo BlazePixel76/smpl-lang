@@ -1,0 +1,6 @@
+﻿speak "Welcome to app.smpl"
+speak "Opening the current folder..."
+open "."
+speak "Now running a shell command..."
+run "echo SMPL app.smpl test"
+stop

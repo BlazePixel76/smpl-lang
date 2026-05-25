@@ -1,0 +1,89 @@
+# SMPL Adventure Quest
+speak "Welcome to the SMPL Adventure Quest!"
+set score = 0
+set health = 10
+set potion = 1
+speak "Choose 1=New game, 2=Continue, 3=Show memory, 4=Quit"
+listen choice
+
+if choice == 1
+then set score = 0
+set health = 10
+set potion = 1
+speak "A new quest begins..."
+
+if choice == 2
+then load score
+set health = 10
+set potion = 1
+speak "Loading your saved quest..."
+speak "Score restored to:"
+speak score
+
+if choice == 3
+then show memory
+set health = 0
+stop
+
+if choice == 4
+then speak "Farewell, traveler!"
+set health = 0
+stop
+
+if choice == 1 or choice == 2
+then repeat while health > 0 and score < 50
+then speak "What will you do next? 1=Explore 2=Heal 3=Save 4=Quit"
+listen choice
+if choice == 1
+then explore
+otherwise then if choice == 2
+then heal
+otherwise then if choice == 3
+then save score
+speak "Your score was saved."
+otherwise then if choice == 4
+then speak "The quest ends for now."
+set health = 0
+stop
+stop
+
+if health <= 0
+then speak "You have fallen in the wilds. Game over."
+stop
+
+if score >= 50
+then speak "You reached the hidden shrine and won the adventure!"
+stop
+stop
+
+# Tasks used by the adventure
+
+task explore
+then speak "You walk into the dark forest..."
+set score = score + 5
+set health = health - 2
+if health <= 0
+then speak "A wild beast struck you as you entered!"
+speak "Health is now:"
+speak health
+stop
+
+if score == 15 or score == 30 or score == 45
+then set potion = potion + 1
+speak "You found a potion from hidden ruins!"
+speak "Potions:" 
+speak potion
+stop
+
+stop
+
+
+task heal
+then if potion > 0
+then set potion = potion - 1
+set health = health + 5
+speak "You drink a healing potion."
+otherwise then speak "No potions left to heal."
+speak "Health is now:"
+speak health
+stop

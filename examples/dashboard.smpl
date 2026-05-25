@@ -1,0 +1,32 @@
+﻿# SMPL Advanced State Engine & Dashboard Terminal
+set active = 1
+set launch_count = 0
+# Check if there is a saved state from a previous session
+load launch_count
+speak "--- 💻 WELCOME TO THE SMPL DESKTOP UTILITY ---"
+speak "Current Session launches recovered:"
+speak launch_count
+speak "-------------------------------------------"
+repeat while active == 1
+then speak "Choose an Action [1: Terminal Calc, 2: Open Notepad, 3: Reset Count, 4: Exit]:"
+listen command
+if command == 1
+then speak "Executing quick memory profile..."
+show memory
+otherwise then
+    if command == 2
+    then set launch_count = launch_count + 1
+    save launch_count
+    speak "Opening Windows Notepad... State Saved!"
+    open "notepad.exe"
+    otherwise then
+        if command == 3
+        then speak "Wiping session cache..."
+        set launch_count = 0
+        save launch_count
+        otherwise then
+            if command == 4
+            then speak "Exiting environment. Goodbye!"
+            set active = 0
+
+speak "Dashboard session ended. Goodbye!"
