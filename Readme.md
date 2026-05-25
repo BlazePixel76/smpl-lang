@@ -118,8 +118,12 @@ For lightweight `.smpl` highlighting in VS Code, add this to your user settings 
 
 ## 📄 License
 
-SMPL is distributed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 Once `Readme.md` is saved, your project documentation is ready. Open the VS Code terminal (**Ctrl + `**) and I’ll help you verify the launcher commands next.
+
+---
+
+**© 2026 BlazePixel - All rights reserved**
