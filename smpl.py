@@ -8,7 +8,7 @@ from typing import Any, Dict, List, Tuple
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8")
 
-VERSION = "0.1.0"
+VERSION = "1.0.0"
 
 # Token Types
 TOKEN_SET = "SET"
